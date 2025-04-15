@@ -18,16 +18,20 @@ import {
 
 import { SearchForm } from "./search-form"
 import { Book, Box, Home, Icon } from "lucide-react"
+import { link } from "fs"
+import { NavLink } from "react-router"
 
 // This is sample data.
 const data = [
     {
         name : "home",
-        icon : <Home className="w-4 h-4" />
+        icon : <Home className="w-4 h-4" />,
+        link : "/home"
     },
     {
         name : "book",
-        icon: <Book className="w-4 h-4" />
+        icon: <Book className="w-4 h-4" />,
+        link:"/book"
     }
 ]
 
@@ -51,10 +55,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem className="capitalize">
-                <div className="flex items-center">
+                    <NavLink to={item.link} className="flex items-center">
+                  
                     {item.icon}
                     <span className="ml-2">{item.name}</span>
-                </div>
+               
+
+                    </NavLink>
+              
                 </SidebarMenuItem>
               </SidebarMenu>
             </SidebarGroupContent>
