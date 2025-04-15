@@ -4,11 +4,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { NavLink } from "react-router"
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
     <Card className="w-[400px] mx-auto mt-20 p-6">
     <CardHeader>
-      <CardTitle className="text-2xl">Login</CardTitle>
+      <CardTitle className="text-2xl">Sign Up</CardTitle>
       <CardDescription>
         Enter your email below to login to your account
       </CardDescription>
@@ -16,6 +16,15 @@ const LoginPage = () => {
     <CardContent>
       <form>
         <div className="flex flex-col gap-6">
+        <div className="grid gap-2">
+            <Label htmlFor="email">Name</Label>
+            <input
+              id="email"
+              type="text"
+              placeholder="your name"
+              required
+            />
+          </div>
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
             <input
@@ -28,29 +37,25 @@ const LoginPage = () => {
           <div className="grid gap-2">
             <div className="flex items-center">
               <Label htmlFor="password">Password</Label>
-              <a
-                href="#"
-                className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-              >
-                Forgot your password?
-              </a>
+              
             </div>
             <Input id="password" type="password" required />
           </div>
           <Button type="submit" className="w-full">
-            Login
+            Create an account
           </Button>
           <Button variant="outline" className="w-full">
-            Login with Google
+            SignUp with Github
           </Button>
         </div>
-        <div className="mt-4 text-center text-sm">
-          Don&apos;t have an account?{" "}
-          <NavLink to="/register" className="underline underline-offset-4">
-
-          Sign up
-          </NavLink>
         
+
+        <div className="mt-4 text-center text-sm">
+          Already have an account?{" "}
+          <NavLink to="/login" className="underline underline-offset-4">
+            Sign in
+          </NavLink>
+         
         </div>
       </form>
     </CardContent>
@@ -58,5 +63,4 @@ const LoginPage = () => {
   )
 }
 
-
-export default LoginPage
+export default RegisterPage;
