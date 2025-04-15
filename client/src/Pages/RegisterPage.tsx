@@ -52,7 +52,7 @@ const RegisterPage = () => {
 
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <NavLink to="/login" className="underline underline-offset-4">
+          <NavLink to="/auth/login" className="underline underline-offset-4">
             Sign in
           </NavLink>
          
